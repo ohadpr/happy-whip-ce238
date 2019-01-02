@@ -3,22 +3,22 @@ label: Elements
 hide_body: true
 is_partial: false
 fields:
-  - type: text
-    name: title
-    label: Title
-  - type: textarea
-    name: subtitle
-    label: Subtitle
-    config:
-      wysiwyg: true
-      schema:
-        format: markdown
-  - type: text
-    name: layout
-    label: Layout
-    hidden: true
-    default: elements
-    config:
-      required: true
+- type: text
+  name: title
+  label: Title
+- type: textarea
+  name: subtitle
+  label: Subtitle
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+- type: text
+  name: layout
+  label: Layout
+  hidden: true
+  default: elements
+  config:
+    required: true
 pages:
-  - elements.md
+- elements.md
