@@ -1,0 +1,105 @@
+---
+label: Page
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Page Title
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Page Subtitle
+    description: Appears below the page title
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: file
+    name: content_img_path
+    label: Content Image
+  - type: field_group
+    name: home_sections
+    label: Home Sections
+    description: If page is to be featured in the home page carousel or spotlights
+    fields:
+      - type: field_group
+        name: spotlight
+        label: Spotlight
+        description: Home page spotlight
+        fields:
+          - type: boolean
+            name: enabled
+            label: Enabled
+            default: false
+          - type: field_group
+            name: image
+            label: Home Spotlight Image
+            fields:
+              - type: file
+                name: url
+                label: Image
+              - type: text
+                name: data_position
+                label: Data Position
+                description: 'example: left'
+          - type: text
+            name: title
+            label: Home Spotlight Title
+          - type: text
+            name: excerpt
+            label: Home Spotlight Excerpt
+            description: Excerpt to bedisplayed in the home spotlight
+          - type: number
+            name: weight
+            label: Spotlight Weight
+            description: The index of the spotlight in home spotlights
+      - type: field_group
+        name: carousel
+        label: Carousel
+        description: Home page Carousel
+        fields:
+          - type: boolean
+            name: enabled
+            label: Enabled
+            default: false
+          - type: field_group
+            name: image
+            label: Home Carousel Image
+            fields:
+              - type: file
+                name: url
+                label: Image
+              - type: text
+                name: data_position
+                label: Data Position
+                description: 'example: left'
+          - type: text
+            name: title
+            label: Carousel Section Title
+          - type: textarea
+            name: subtitle
+            label: Carousel Section Subtitle
+            description: Text below the section title
+            config:
+              wysiwyg: true
+              schema:
+                format: markdown
+          - type: number
+            name: weight
+            label: Carousel Weight
+            description: The index of the carousel section
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: page
+    config:
+      required: true
+pages:
+  - aliquam.md
+  - consequat-ipsum.md
+  - generic.md
+  - magna-tempus-2.md
+  - magna-tempus.md
+  - pellentesque-fermentum.md

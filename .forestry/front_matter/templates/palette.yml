@@ -1,0 +1,14 @@
+---
+label: Palette
+is_partial: true
+fields:
+  - type: field_group
+    name: sass
+    label: SASS
+    fields:
+      - type: text
+        name: accent2
+      - type: text
+        name: accent3
+      - type: text
+        name: accent4

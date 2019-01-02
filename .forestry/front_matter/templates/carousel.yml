@@ -1,0 +1,34 @@
+---
+label: Carousel
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: >-
+      Section title (Also used bt the CMS, even if it is not displayed on the
+      page)
+    default: Carousel Title
+    config:
+      required: true
+  - type: select
+    name: background_accent_color
+    label: Background Accent Color
+    description: Sets the color used for the section background
+    config:
+      source:
+        type: custom
+      options:
+        - accent1
+        - accent2
+        - accent3
+        - accent4
+  - type: text
+    name: component
+    label: Component
+    hidden: true
+    default: carousel.html
+    config:
+      required: true

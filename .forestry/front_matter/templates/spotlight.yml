@@ -1,0 +1,29 @@
+---
+label: Spotlight
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: >-
+      Section title (Also used bt the CMS, even if it is not displayed on the
+      page)
+    default: Spotlight Section
+    config:
+      required: true
+  - type: text
+    name: component
+    label: Component
+    hidden: true
+    default: spotlight.html
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Spotlight Section Subtitle
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown

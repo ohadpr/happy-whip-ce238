@@ -1,0 +1,88 @@
+---
+label: Home
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: Page title
+  - type: field_group
+    name: banner
+    label: Banner
+    description: Home page banner
+    fields:
+      - type: field_group_list
+        name: items
+        label: Banner sections
+        description: Sections displayed on the left side of the banner
+        config:
+          labelField: title
+        fields:
+          - type: text
+            name: title
+            label: Section Title
+            description: Banner Section Title
+          - type: textarea
+            name: subtitle
+            label: Banner Section Subtitle
+            description: The text that appears below the banner section title
+            config:
+              wysiwyg: true
+              schema:
+                format: markdown
+          - type: field_group
+            name: action
+            label: Banner Section Action
+            description: The action button for the banner section
+            fields:
+              - type: text
+                name: label
+                label: Label
+              - type: text
+                name: url
+                label: URL
+              - type: boolean
+                name: is_scrolly
+                label: Is Scrolly
+                default: false
+              - type: boolean
+                name: is_primary
+                label: Is Primary
+                default: true
+      - type: field_group_list
+        name: slider
+        label: Banner Image Slider
+        description: List of images to be displayed in the banner image slider
+        config:
+          labelField: img_path
+        fields:
+          - type: file
+            name: img_path
+            label: Image
+          - type: text
+            name: data_position
+            label: Image Data Position
+            description: 'Example: top left'
+  - type: boolean
+    name: show_contact
+    label: Show Contact Section
+    description: Displays the contact section at the bottom of the page
+    default: false
+  - type: blocks
+    name: sections
+    label: Sections
+    description: Home Sections
+    template_types:
+      - features
+      - carousel
+      - spotlight
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: home
+    config:
+      required: true
+pages:
+  - index.md

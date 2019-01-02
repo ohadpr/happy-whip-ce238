@@ -1,0 +1,132 @@
+---
+label: Config
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: Site title
+    config:
+      required: true
+  - type: field_group
+    name: menu
+    label: Menu
+    description: Menu configuration
+    fields:
+      - type: field_group_list
+        name: actions
+        label: Action Buttons
+        description: List of action buttons
+        config:
+          labelField: label
+        fields:
+          - type: include
+            name: include_action
+            label: Action
+            template: action
+  - type: field_group
+    name: footer
+    label: Footer
+    description: Footer configuration
+    fields:
+      - type: field_group
+        name: contact
+        label: Contact
+        description: The contact section of the footer
+        fields:
+          - type: text
+            name: title
+            label: Title
+            description: The contact section title
+          - type: textarea
+            name: subtitle
+            label: Subtitle
+            description: The contact section subtitle
+            config:
+              wysiwyg: true
+              schema:
+                format: markdown
+      - type: field_group
+        name: links_col1
+        label: First links column
+        fields:
+          - type: include
+            name: include_linkColumn
+            label: Link Column
+            template: linkColumn
+      - type: field_group
+        name: links_col2
+        label: Second links column
+        fields:
+          - type: include
+            name: include_linkColumn
+            label: Link Column
+            template: linkColumn
+      - type: field_group
+        name: links_col3
+        label: Third links column
+        fields:
+          - type: include
+            name: include_linkColumn
+            label: Link Column
+            template: linkColumn
+      - type: field_group
+        name: links_col4
+        label: Fourth links column
+        fields:
+          - type: include
+            name: include_linkColumn
+            label: Link Column
+            template: linkColumn
+      - type: field_group_list
+        name: social_links
+        label: Social Links
+        description: Contact Methods
+        config:
+          labelField: text
+        fields:
+          - type: text
+            name: text
+            label: Contact method description
+          - type: text
+            name: icon
+            label: Icon
+            description: Font Awesome Icon
+          - type: text
+            name: link
+            label: URL
+      - type: text
+        name: copyright
+        label: Copyright
+        description: Copyright displayed at the bottom of the page
+  - type: select
+    name: palette
+    label: Color Palette
+    config:
+      source:
+        type: custom
+      options:
+        - cyan
+        - purple
+  - type: field_group
+    name: palettes
+    label: Palettes
+    hidden: true
+    fields:
+      - type: field_group
+        name: cyan
+        label: Cyan
+        fields:
+          - type: include
+            name: include_palette
+            label: Palette
+            template: palette
+      - type: field_group
+        name: purple
+        label: Purple
+        fields:
+          - type: include
+            name: include_palette
+            label: Palette
+            template: palette

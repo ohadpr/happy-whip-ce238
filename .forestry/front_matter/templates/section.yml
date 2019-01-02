@@ -1,0 +1,20 @@
+---
+label: Section
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: >-
+      Section title (Also used bt the CMS, even if it is not displayed on the
+      page)
+    config:
+      required: true
+  - type: text
+    name: component
+    label: Component
+    hidden: true
+    config:
+      required: true

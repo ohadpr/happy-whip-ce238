@@ -1,0 +1,23 @@
+<!-- Banner -->
+<section id="banner">
+    <div class="items">
+        {% for item in page.banner.items %}
+            <section class="{{ item.accent_color }}">
+                <h1>{{ item.title }}</h1>
+                {{ item.subtitle | markdownify }}
+                {% if item.action %}
+                    <ul class="actions special">
+                        <li><a href="{% assign expr_1 = item.action.url | starts_with: '#' %}{% if expr_1 %}{{ item.action.url }}{% else %}{{ item.action.url | link | relative_url }}{% endif %}" class="button{% if item.action.is_primary %} primary{% endif %}{% if item.action.is_scrolly %} scrolly{% endif %}">{{ item.action.label }}</a></li>
+                    </ul>
+                {% endif %}
+            </section>
+        {% endfor %}
+    </div>
+    <div class="slider">
+        {% for slide in page.banner.slider %}
+            <article>
+                <img src="{{ slide.img_path | relative_url }}" alt="" data-position="{{ slide.data_position }}" />
+            </article>
+        {% endfor %}
+    </div>
+</section>
